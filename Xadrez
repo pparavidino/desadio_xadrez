@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main(){
+    printf("Movimento da torre\n"); //torre 5 casas pra direita
+
+
+    for (size_t i = 0; i < 5; i++) //Quando sabemos de antemão o número exato de repetições, o loop for é a melhor escolha.
+    {
+        printf("Direita\n");
+    }
+
+    printf("Movimento do bispo\n");
+
+    int bispo = 0;
+    while (bispo < 5)
+    {
+        printf("Diagonal pra cima a direita\n");
+        bispo++;
+    }
+
+    printf("\n");
+
+    printf("Movimento Rainha\n");
+    int rainha = 0; 
+    do
+    {
+        printf("Esquerda\n");
+        rainha++;
+    } while (rainha <8);
+    
+    
+    
+}
