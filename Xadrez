@@ -27,7 +27,24 @@ int main(){
         printf("Esquerda\n");
         rainha++;
     } while (rainha <8);
+
+
+    printf("Movimento cavalo\n");
+     
+    for (int i = 0; i < 2  ; i++)
+    {
+        int j = 0;
+        while (j < 1)
+        {
+
+            printf("Esquerda\n");
+            j++;
+
+        }
+        printf("Baixo\n");
+        
+    }
     
     
-    
-}
+    return 0;
+} 
