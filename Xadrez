@@ -1,50 +1,44 @@
 #include <stdio.h>
 
-int main(){
-    printf("Movimento da torre\n"); //torre 5 casas pra direita
+void movimentotorre(int casas) {
+    if (casas == 0) return;
+    printf("Direita\n");
+    movimentotorre(casas - 1); 
+}
 
+void movimentobispo(int casas) {
+    if (casas == 0) return;
+    printf("Diagonal cima direita\n");
+    movimentobispo(casas - 1);
+}
 
-    for (size_t i = 0; i < 5; i++) //Quando sabemos de antemão o número exato de repetições, o loop for é a melhor escolha.
-    {
+void movimentorainha(int casas) {
+    if (casas == 0) return;
+    printf("Esquerda\n");
+    movimentorainha(casas - 1);
+}
+
+void movimentocavalo(int movimento) {
+    for (int i = 0; i < movimento; i++) {
+        for (int j = 0; j < 2; j++) { 
+            printf("Cima\n");
+        }
         printf("Direita\n");
     }
+}
 
-    printf("Movimento do bispo\n");
+int main() {
+    printf("\nMovimento do Bispo\n");
+    movimentobispo(5);
 
-    int bispo = 0;
-    while (bispo < 5)
-    {
-        printf("Diagonal pra cima a direita\n");
-        bispo++;
-    }
+    printf("\nMovimento da Torre\n");
+    movimentotorre(5); 
 
-    printf("\n");
+    printf("\nMovimento Rainha\n");
+    movimentorainha(8);
 
-    printf("Movimento Rainha\n");
-    int rainha = 0; 
-    do
-    {
-        printf("Esquerda\n");
-        rainha++;
-    } while (rainha <8);
+    printf("\nMovimento Cavalo\n");
+    movimentocavalo(1); 
 
-
-    printf("Movimento cavalo\n");
-     
-    for (int i = 0; i < 2  ; i++)
-    {
-        int j = 0;
-        while (j < 1)
-        {
-
-            printf("Esquerda\n");
-            j++;
-
-        }
-        printf("Baixo\n");
-        
-    }
-    
-    
     return 0;
-} 
+}
